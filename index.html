@@ -51,6 +51,27 @@
             background="transparent" speed="1" autoplay loop></lottie-player>
     </div>
 
+    <!-- up arrow button  -->
+    <button onclick="topFunction()" id="myBtn" title="To Top"><span class="material-symbols-outlined">
+        expand_less
+    </span></button>
+
+    <!-- Product add Toast  -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img style="height: 20px" src="./Assets/img/add.ico" class="rounded me-2" alt="Logo">
+                <strong class="me-auto">Kiks Square</strong>
+                <span style="padding: 4px 8px !important; font-size: 9px;"
+                    class="badge text-bg-success">Added</span>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Product added to your cart
+            </div>
+        </div>
+    </div>
+
 
 
 
