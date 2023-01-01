@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Yunick Shoes</title>
+    <title>Yunick Store</title>
 
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="./Assets/img/favicon.png">
@@ -33,9 +33,10 @@
     </audio>
 
 </head>
-<body onload="preLoader()">
+<body >
+    <!-- onload="preLoader()" -->
     <!-- Boxes changing color when the page loads -->
-    <div id="loading" class="container-1">
+    <!-- <div id="loading" class="container-1">
         <div style='--i : 1; background-color : tomato' class="box"></div>
         <div style='--i : 2; background-color : #5037c9' class="box"></div>
         <div style='--i : 3; background-color : #1ae2ac' class="box"></div>
@@ -44,7 +45,7 @@
         <div style='--i : 6; background-color : #c395bf' class="box"></div>
         <div style='--i : 7; background-color : #4032bb' class="box"></div>
         <div style='--i : 8; background-color : #0fe0b7' class="box"></div>
-    </div>
+    </div> -->
 
     <div id="main">
         <lottie-player id="lottie" class="lottie" src="https://assets3.lottiefiles.com/packages/lf20_Vwcw5D.json"
@@ -61,7 +62,7 @@
         <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
                 <img style="height: 20px" src="./Assets/img/add.ico" class="rounded me-2" alt="Logo">
-                <strong class="me-auto">Kiks Square</strong>
+                <strong class="me-auto">Yunick Store</strong>
                 <span style="padding: 4px 8px !important; font-size: 9px;"
                     class="badge text-bg-success">Added</span>
                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
@@ -70,6 +71,67 @@
                 Product added to your cart
             </div>
         </div>
+    </div>
+
+    <!-- Product remove Toast  -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToastDelete" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <img style="height: 20px" src="./Assets/img/remove.ico" class="rounded me-2" alt="Logo">
+                <strong class="me-auto">Yunick Store</strong>
+                <span style="padding: 4px 8px !important; font-size: 9px;"
+                    class="badge text-bg-danger">Removed</span>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Product removed from your cart
+            </div>
+        </div>
+    </div>
+
+    <!-- navbar -->
+    <div id="section-1">
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="./Assets/img/logo.png" alt="logo"></a>
+            </div>
+            <ul class="nav-links">
+                <a class="list" href="#">
+                    <li>Footwear</li>
+                </a>
+                <a class="list" href="#">
+                    <li>About us</li>
+                </a>
+                <a class="list" href="#topProducts">
+                    <li>Products</li>
+                </a>
+                <a class="list" href="#">
+                    <li>Sale</li>
+                </a>
+            </ul>
+
+            <ul class="nav-icons">
+                <a class="list" href="#">
+                    <!-- <dark-mode-toggle id="dark-mode-toggle-1" appearance="toggle" dark="Dark" light="Light">
+                    </dark-mode-toggle> -->
+                    <li><img id="mode" style="height:36px ;" src="./Assets/img/dark-mode.png" alt=""></li>
+                </a>
+                <a class="list" href="#">
+                    <li><span class="material-symbols-outlined">search</span></li>
+                </a>
+                <a class="list" href="#">
+                    <li><span class="material-symbols-outlined">profile</span></li>
+                </a>
+                <a class="list" target="_self" href="#">
+                    <li onclick="showCartPage()"><span class="material-symbols-outlined">shopping_bag<span
+                                id="cartCount" class="badge rounded-pill badge-notification bg-danger"></span>
+                        </span>
+                    </li>
+                </a>
+            </ul>
+        </nav>
+
+        
     </div>
 
 
