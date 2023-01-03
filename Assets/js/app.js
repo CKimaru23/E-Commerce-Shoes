@@ -45,3 +45,38 @@ function topFunction() {
 	document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+// FETCH PRODUCTS IN JSON 
+
+function showTopShoes(startIndex, endIndex) {
+	let topProducts = document.getElementById("topProducts");
+	fetch('https://raw.githubusercontent.com/CKimaru23/E-Commerce-Shoes/main/Assets/json/topProducts.json')
+		.then(response => response.json())
+		.then(data => {
+			let shoes = data.shoes;
+			let str = "";
+			for (startIndex; startIndex < endIndex; startIndex++) {
+				str += `
+			<div class="p-body">
+			<div class="circle" style="background: linear-gradient(239deg, ${shoes[startIndex].bgGradient[0]} 0%, ${shoes[startIndex].bgGradient[1]} 100%);"></div>
+                <img class="shoesImg" src="${shoes[startIndex].imgSrc}" alt="shoes">
+                <div class="rating">
+                    <i class="fa fa-star clicked"></i>
+                    <i class="fa fa-star clicked"></i>
+                    <i class="fa fa-star clicked"></i>
+                    <i class="fa fa-star clicked"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+				<div class="top-p-text">
+                	<p class="top-p-name">${shoes[startIndex].name}</p>
+					<p class="top-p-price">${shoes[startIndex].price}<span id="liveToastBtn" onClick="addProduct(${shoes[startIndex].id},'${shoes[startIndex].name}','${shoes[startIndex].price}','${shoes[startIndex].imgSrc}');" class="material-symbols-outlined addIcon">add_shopping_cart</span></p>
+				</div>
+            </div>
+			`;
+			}
+			topProducts.innerHTML = str;
+		})
+		.catch(err => console.error(err));
+}
+showTopShoes(0, 4);
+// SHOW NUMBER OF PRODUCT IN CART LOGO 
+
