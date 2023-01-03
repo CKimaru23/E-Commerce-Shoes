@@ -189,3 +189,21 @@ function clearCart() {
 	document.getElementById("cartCount").innerText = "0";
 }
 
+// MALE AND FEMALE SHOES DISPLAY 
+
+function displayNewShoes() {
+	let toggleGender = document.getElementById("toggleGender");
+	let sellerShoes = document.getElementById("sellerShoes");
+	let shoesDisplay = document.getElementById("shoesDisplay");
+	let bestSellerShoesText = document.getElementById("bestSellerShoesText");
+
+	if (toggleGender.checked == true) {
+		sellerShoes.src = './Assets/img/best-seller-women.png'
+		shoesDisplay.style.background = 'linear-gradient(270deg, #FF3C78 0%, #FFB2B2 100%) ';
+		bestSellerShoesText.innerText = 'Adidas Falcon Shoes for women - 2021 Edition (PINK)';
+	} else {
+		sellerShoes.src = './Assets/img/best-seller-men.png'
+		shoesDisplay.style.background = 'linear-gradient(270deg, #2226d4 0%, #98cef9 100%) ';
+		bestSellerShoesText.innerText = 'Adidas Falcon Shoes for men - 2021 Edition (BLUE)';
+	}
+}
