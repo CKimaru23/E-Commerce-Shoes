@@ -235,6 +235,53 @@
                 </section>    
             </div>
 
+            <!-- Shopping cart -->
+            <section style="display: none;" id="cart-container" class="container">
+                <div class="cart-head mb-5">
+                    <h1 class="fw-bolder">Shopping Cart</h1>
+                </div>
+                <div class="cart-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th style="border-radius: 30px 0px 0px 30px;" scope="col">Product</th>
+                                <th scope="col">Quantity</th>
+                                <th style="border-radius: 0px 30px 30px 0px;" scope="col">SubTotal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cartBody">
+                            <tr id="emptyCart">
+                                <td colspan="3" class="text-center">
+                                    <img style="height: 500px;" src="./Assets/img/empty-cart.png" alt="empty-cart">
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                            <th class="cart-prod" scope="row">
+                                <img src="https://user-images.githubusercontent.com/87645745/197327637-25d6d8cb-c1de-4f9d-9a9c-27a8ad7c49f3.png"
+                                    alt="cart-product">
+                                <div class="cart-text">
+                                    <h5>Adidas Falcon Shoes for men - 2021 Edition</h5>
+                                    <h6>Price : $234.32</h6>
+                                    <span>Remove</span>
+                                </div>
+                            </th>
+                            <td>1</td>
+                            <td>$565.00</td>
+                        </tr> -->
+                        </tbody>
+                    </table>
+                    <hr class="container">
+                    <div id="checkout">
+                        <button id="clearCartBtn" onclick="clearCart()" class="hero-btn">Clear Cart</button>
+                        <div class="d-flex justify-content-between align-items-center m-5">
+                            <h4 class="fw-bolder">Total</h4>
+                            <h4 id="totalPrice" class="fw-bolder">$0.00</h4>
+                        </div>
+                        <button onclick="showAnimation()" id="checkoutBtn" class="hero-btn">Check out</button>
+                    </div>
+                </div>
+            </section>
+
             
 
 
