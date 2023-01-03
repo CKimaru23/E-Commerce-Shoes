@@ -215,3 +215,20 @@ function showCartPage() {
 	displayCartPage();
 	showTotalPrice();
 }
+
+// SHOW TOTAL PRICE OF CART 
+function showTotalPrice() {
+	let totalPrice = document.getElementById("totalPrice");
+	let myCart = localStorage.getItem('cartProduct');
+	if (myCart == null) {
+		totalPrice.innerText = "$0";
+	} else {
+		myCart = JSON.parse(myCart);
+		let sum = 0;
+		for (let i = 0; i < myCart.length; i++) {
+			sum += parseFloat((myCart[i].price).substring(1, myCart[i].price.length)) * (myCart[i].quantity);
+
+		}
+		totalPrice.innerText = "$" + sum;
+	}
+}
