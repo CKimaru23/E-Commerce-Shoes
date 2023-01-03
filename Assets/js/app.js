@@ -80,3 +80,34 @@ function showTopShoes(startIndex, endIndex) {
 showTopShoes(0, 4);
 // SHOW NUMBER OF PRODUCT IN CART LOGO 
 
+function addProduct(id, name, price, imgSrc) {
+	clickAudio.play()
+	let quantity = 1;
+	let toastLiveExample = document.getElementById('liveToast')
+	let cartProduct = localStorage.getItem('cartProduct');
+	const toast = new bootstrap.Toast(toastLiveExample);
+	if (cartProduct == null) {
+		cartArr = [];
+	} else {
+		cartArr = JSON.parse(cartProduct);
+	}
+
+	for (let i = 0; i < cartArr.length; i++) {
+		if (cartArr[i].id == id) {
+			quantity = (cartArr[i].quantity) + 1;
+			cartArr.splice(i, 1);
+		}
+	}
+	let cartObj = {
+		'id': id,
+		'name': name,
+		'price': price,
+		'imgSrc': imgSrc,
+		'quantity': quantity
+	};
+	cartArr.push(cartObj);
+	localStorage.setItem('cartProduct', JSON.stringify(cartArr))
+	toast.show();
+	let cartCount = document.getElementById("cartCount");
+	cartCount.innerText = cartArr.length;
+}
