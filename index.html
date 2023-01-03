@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Yunick Store</title>
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="./Assets/img/favicon.png">
+    <link rel="icon" type="image/x-icon" href="Assets/img/favicon.png">
 
     <!-- stylesheet -->
     <link rel="stylesheet" href="./Assets/css/style.css">
@@ -27,140 +27,134 @@
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    
+
     <audio id="myAudio">
-        <source src="./Assets/js/click.mp3" type="audio/mp3">
+        <source src="Assets/js/click.mp3" type="audio/mp3">
     </audio>
 
 </head>
-<body >
-    <!-- onload="preLoader()" -->
-    <!-- Boxes changing color when the page loads -->
-    <!-- <div id="loading" class="container-1">
-        <div style='--i : 1; background-color : tomato' class="box"></div>
-        <div style='--i : 2; background-color : #5037c9' class="box"></div>
-        <div style='--i : 3; background-color : #1ae2ac' class="box"></div>
-        <div style='--i : 4; background-color : #e29f1a' class="box"></div>
-        <div style='--i : 5; background-color : #e21ab9' class="box"></div>
-        <div style='--i : 6; background-color : #c395bf' class="box"></div>
-        <div style='--i : 7; background-color : #4032bb' class="box"></div>
-        <div style='--i : 8; background-color : #0fe0b7' class="box"></div>
-    </div> -->
+
+<body onload="preLoader()">
+    <div id="loading" class="wrapper">
+        <div style='--i : 1; background-color : tomato' class="rect"></div>
+        <div style='--i : 2; background-color : #5037c9' class="rect"></div>
+        <div style='--i : 3; background-color : #1ae2ac' class="rect"></div>
+        <div style='--i : 4; background-color : #e29f1a' class="rect"></div>
+        <div style='--i : 5; background-color : #e21ab9' class="rect"></div>
+        <div style='--i : 6; background-color : #c395bf' class="rect"></div>
+        <div style='--i : 7; background-color : #4032bb' class="rect"></div>
+        <div style='--i : 8; background-color : #0fe0b7' class="rect"></div>
+    </div>
 
     <div id="main">
         <lottie-player id="lottie" class="lottie" src="https://assets3.lottiefiles.com/packages/lf20_Vwcw5D.json"
             background="transparent" speed="1" autoplay loop></lottie-player>
-    </div>
 
-    <!-- up arrow button  -->
-    <button onclick="topFunction()" id="myBtn" title="To Top"><span class="material-symbols-outlined">
-        expand_less
-    </span></button>
-
-    <!-- Product add Toast  -->
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <img style="height: 20px" src="./Assets/img/add.ico" class="rounded me-2" alt="Logo">
-                <strong class="me-auto">Yunick Store</strong>
-                <span style="padding: 4px 8px !important; font-size: 9px;"
-                    class="badge text-bg-success">Added</span>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body">
-                Product added to your cart
+        <!-- up arrow button  -->
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><span class="material-symbols-outlined">
+                expand_less
+            </span></button>
+        <!-- Product add Toast  -->
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img style="height: 20px" src="./Assets/img/add.ico" class="rounded me-2" alt="Logo">
+                    <strong class="me-auto">Yunick Store</strong>
+                    <span style="padding: 4px 8px !important; font-size: 9px;"
+                        class="badge text-bg-success">Added</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Product added to your cart
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- Product remove Toast  -->
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="liveToastDelete" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <img style="height: 20px" src="./Assets/img/remove.ico" class="rounded me-2" alt="Logo">
-                <strong class="me-auto">Yunick Store</strong>
-                <span style="padding: 4px 8px !important; font-size: 9px;"
-                    class="badge text-bg-danger">Removed</span>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body">
-                Product removed from your cart
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+            <div id="liveToastDelete" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <img style="height: 20px" src="./Assets/img/remove.ico" class="rounded me-2" alt="Logo">
+                    <strong class="me-auto">Yunick Store</strong>
+                    <span style="padding: 4px 8px !important; font-size: 9px;"
+                        class="badge text-bg-danger">Removed</span>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Product removed from your cart
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- navbar -->
-    <div id="section-1">
-        <nav>
-            <div class="logo">
-                <a href="index.html"><img src="./Assets/img/logo.png" alt="logo"></a>
-            </div>
-            <ul class="nav-links">
-                <a class="list" href="#">
-                    <li>Footwear</li>
-                </a>
-                <a class="list" href="#">
-                    <li>About us</li>
-                </a>
-                <a class="list" href="#topProducts">
-                    <li>Products</li>
-                </a>
-                <a class="list" href="#">
-                    <li>Sale</li>
-                </a>
-            </ul>
-
-            <ul class="nav-icons">
-                <a class="list" href="#">
-                    <!-- <dark-mode-toggle id="dark-mode-toggle-1" appearance="toggle" dark="Dark" light="Light">
-                    </dark-mode-toggle> -->
-                    <li><img id="mode" src="./Assets/img/dark-mode.png" alt=""></li>
-                </a>
-                <a class="list" href="#">
-                    <li><span class="material-symbols-outlined">search</span></li>
-                </a>
-                <a class="list" href="#">
-                    <li><span class="material-symbols-outlined">person</span></li>
-                </a>
-                <a class="list" target="_self" href="#">
-                    <li onclick="showCartPage()"><span class="material-symbols-outlined">shopping_bag<span
-                                id="cartCount" class="badge rounded-pill badge-notification bg-danger"></span>
-                        </span>
-                    </li>
-                </a>
-            </ul>
-        </nav>
-
-        <div id="hiddenCartPage">
-            <!-- hero -->
-            <div class="hero-box container">
-                <div class="hero-text">
-                    <h1>Get your <span class="hero-text-span">Awesome</span><br> Sneakers</h1>
-                    <p>We offer the best deals in our shop. Check them out now. We have awesome
-                        stuff on sale for you.
-                    </p>
-                    <button class="hero-btn">Shop Now</button>
+        <!-- navbar -->
+        <div id="section-1">
+            <nav>
+                <div class="logo">
+                    <a href="index.html"><img src="./Assets/img/logo.png" alt="logo"></a>
                 </div>
-                <div class="hero-image">
-                    <img src="Assets/img/hero-image.png" alt="hero">
-                </div>
-            </div>
+                <ul class="nav-links">
+                    <a class="list" href="#">
+                        <li>Footwear</li>
+                    </a>
+                    <a class="list" href="#">
+                        <li>About us</li>
+                    </a>
+                    <a class="list" href="#topProducts">
+                        <li>Products</li>
+                    </a>
+                    <a class="list" href="#">
+                        <li>Sale</li>
+                    </a>
+                </ul>
+                <ul class="nav-icons">
+                    <a class="list" href="#">
+                        <!-- <dark-mode-toggle id="dark-mode-toggle-1" appearance="toggle" dark="Dark" light="Light">
+                        </dark-mode-toggle> -->
+                        <li><img id="mode" style="height:36px ;" src="./Assets/img/moon.avif" alt=""></li>
 
-            <!-- featured products  -->
-            
-            <section class="container f-products">
-                <div class="d-flex mb-3 f-product-head">
-                    <h1 class="fw-bolder">Featured Products</h1>
-                    <p onclick="showTopShoes(0,12)" id="viewAll" class="d-flex flex-nowrap align-items-center">View
-                        all
-                        <span class="material-symbols-outlined">chevron_right</span>
-                    </p>
-                </div>
-                <!-- feature & top Products are here  -->
-                <div id="topProducts" class="top-products d-flex flex-wrap justify-content-around"></div>
-            </section>
+                    </a>
+                    <a class="list" href="#">
+                        <li><span class="material-symbols-outlined">search</span></li>
+                    </a>
+                    <a class="list" href="#">
+                        <li><span class="material-symbols-outlined">person</span></li>
+                    </a>
+                    <a class="list" target="_self" href="#">
+                        <li onclick="showCartPage()"><span class="material-symbols-outlined">shopping_bag<span
+                                    id="cartCount" class="badge rounded-pill badge-notification bg-danger"></span>
+                            </span>
+                        </li>
+                    </a>
+                </ul>
+            </nav>
+            <div id="hiddenCartPage">
 
-            <hr class="container">
+                <!-- hero -->
+                <div class="hero-box container">
+                    <div class="hero-text">
+                        <h1>Get your <span class="hero-text-span">Awesome</span><br> Sneakers</h1>
+                        <p>We offer the best deals in our shop. Check them out now. We have awesome
+                            stuff on sale for you.
+                        </p>
+                        <button class="hero-btn">Shop Now</button>
+                    </div>
+                    <div class="hero-image">
+                        <img src="./Assets/img/hero-image.png" alt="hero">
+                    </div>
+                </div>
+
+                <!-- featured products  -->
+
+                <section class="container f-products">
+                    <div class="d-flex mb-3 f-product-head">
+                        <h1 class="fw-bolder">Featured Products</h1>
+                        <p onclick="showTopShoes(0,12)" id="viewAll" class="d-flex flex-nowrap align-items-center">View
+                            all
+                            <span class="material-symbols-outlined">chevron_right</span>
+                        </p>
+                    </div>
+                    <!-- feature & top Products are here  -->
+                    <div id="topProducts" class="top-products d-flex flex-wrap justify-content-around"></div>
+                </section>
+
+                <hr class="container">
                 <!-- best seller in this week  -->
                 <section class="f-products">
                     <div class="d-flex align-items-center justify-content-between b-product-head">
@@ -174,15 +168,46 @@
                             <span class="m-1 fw-bold">Women</span>
                         </div>
                     </div>
-
-
+                    <!-- best seller in this week are here  -->
+                    <div class="bestSeller mt-5 d-flex justify-content-between align-items-center">
+                        <div class="shoes-display" id="shoesDisplay">
+                            <img id="sellerShoes"
+                                src="https://user-images.githubusercontent.com/87645745/198192028-5775ca40-548c-4ea3-98fa-e1d8d80634c2.png"
+                                alt="men-shoes">
+                        </div>
+                        <div class="best-p-detail d-flex flex-column justify-content-center">
+                            <div class="rating">
+                                <i class="fa fa-star clicked"></i>
+                                <i class="fa fa-star clicked"></i>
+                                <i class="fa fa-star clicked"></i>
+                                <i class="fa fa-star clicked"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <div class="top-p-text">
+                                <p id="bestSellerShoesText" class="top-p-name fw-bolder">Adidas Falcon Shoes for women - 2021 Edition (PINK)</p>
+                                <p class="top-p-price">$120.50</p>
+                            </div>
+                            <button id="shopNow" class="hero-btn">Shop Now</button>
+                        </div>
+                    </div>
                 </section>
+
+                
+            </div>
+
+            
+
+
+            
         </div>
     </div>
 
-
-
-
-    
 </body>
+<!-- bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+<script src="./Assets/js/app.js"></script>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
 </html>

@@ -32,7 +32,6 @@ mode.addEventListener('click', () => {
 
 //function to go to top
 function scrollFunction() {
-    // depends with the browser that is why there is an or in the if-statement
 	if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
 		mybutton.style.display = "block";
 	} else {
