@@ -172,3 +172,20 @@ function removeFromCart(id) {
 	}
 	document.getElementById("cartCount").innerText = myCart.length;
 }
+
+// CLEAR CART 
+function clearCart() {
+	localStorage.clear();
+	let totalPrice = document.getElementById("totalPrice");
+	let cartBody = document.getElementById("cartBody");
+	cartBody.innerHTML = `<tr id="emptyCart">
+	<td colspan="3" class="text-center">
+	<img style="height: 500px;" src="./Assets/img/empty-cart.png" alt="empty-cart">
+	</td>
+	</tr>`;
+	document.getElementById('clearCartBtn').classList.add("disable");
+	totalPrice.innerText = "$0.00";
+	document.getElementById('checkoutBtn').style.display = "none";
+	document.getElementById("cartCount").innerText = "0";
+}
+
