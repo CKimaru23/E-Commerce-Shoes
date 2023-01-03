@@ -232,3 +232,15 @@ function showTotalPrice() {
 		totalPrice.innerText = "$" + sum;
 	}
 }
+
+// SHOW ANIMATION WHEN CHECKOUT 
+function showAnimation() {
+	let lottie = document.getElementById('lottie');
+	lottie.style.display = 'block';
+	setTimeout(() => {
+		lottie.style.display = "none";
+	}, 4000);
+	document.getElementById('checkoutBtn').classList.add('disable')
+	clearCart();
+	document.getElementById('checkoutBtn').style.display = "none";
+}
