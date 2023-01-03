@@ -111,3 +111,42 @@ function addProduct(id, name, price, imgSrc) {
 	let cartCount = document.getElementById("cartCount");
 	cartCount.innerText = cartArr.length;
 }
+
+// DISPLAY ITEMS IN CART 
+function displayCartPage() {
+	let cartBody = document.getElementById("cartBody");
+	let clearCartBtn = document.getElementById('clearCartBtn');
+	let checkoutBtn = document.getElementById('checkoutBtn');
+	let myCart = localStorage.getItem('cartProduct');
+
+	if (myCart == null) {
+		document.getElementById('emptyCart').style.display = "table-row";
+		clearCartBtn.classList.add("disable");
+		checkoutBtn.classList.add("disable");
+		checkoutBtn.style.display = "none";
+	} else {
+		clearCartBtn.classList.remove("disable");
+		checkoutBtn.classList.remove("disable");
+		checkoutBtn.style.display = "block";
+		clearCartBtn.classList.add("hero-btn");
+		myCart = JSON.parse(myCart);
+		let str = "";
+		for (let i = 0; i < myCart.length; i++) {
+			str += `
+					<tr>
+						<th class="cart-prod" scope="row">
+							<img src="${myCart[i].imgSrc}" alt="shoes">
+							<div class="cart-text">
+								<h5>${myCart[i].name}</h5>
+								<h6>Price : ${myCart[i].price}</h6>
+								<span id="${myCart[i].id}" onclick="removeFromCart(this.id)">Remove</span>
+							</div>
+						</th>
+						<td>${myCart[i].quantity}</td>
+						<td>$${parseFloat((myCart[i].price).substring(1, myCart[i].price.length)) * (myCart[i].quantity)}</td>
+					</tr>
+    `;
+		}
+		cartBody.innerHTML = str;
+	}
+}
