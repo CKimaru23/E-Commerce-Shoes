@@ -207,3 +207,11 @@ function displayNewShoes() {
 		bestSellerShoesText.innerText = 'Adidas Falcon Shoes for men - 2021 Edition (BLUE)';
 	}
 }
+
+// DISPLAY CART PAGE
+function showCartPage() {
+	document.getElementById('hiddenCartPage').style.display = "none";
+	document.getElementById('cart-container').style.display = "block";
+	displayCartPage();
+	showTotalPrice();
+}
