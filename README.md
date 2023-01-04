@@ -22,3 +22,4 @@ Categories can be chosen as indicated.
 <!-- footer -->
 Footer section shows a logo and some links which are deactivated so that we can stick to one page.We also have a copyright section in footer that shows the author of the website.
 
+Shoes store web app project using HTML, CSS, and Javascript which displays a many-to-many relationship using API by connecting shoes brands to shoe stores. The API is customized and the featured products gets the data from the API that is linked to the JSON file.
