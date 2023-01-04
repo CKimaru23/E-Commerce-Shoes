@@ -59,6 +59,9 @@ nav ul {
     height: 110px;
 }
 
+#sales {
+    cursor: pointer;
+}
 
 /* hero */
 .hero-box {

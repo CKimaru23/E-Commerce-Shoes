@@ -90,16 +90,16 @@
                     <a href="index.html"><img src="./Assets/img/logo.png" alt="logo"></a>
                 </div>
                 <ul class="nav-links">
-                    <a class="list" href="#">
+                    <a class="list" href="#prods">
                         <li>Footwear</li>
                     </a>
-                    <a class="list" href="#">
+                    <a class="list" href="#categories">
                         <li>About us</li>
                     </a>
                     <a class="list" href="#topProducts">
                         <li>Products</li>
                     </a>
-                    <a class="list" href="#">
+                    <a class="list" onclick="showCartPage()" id="sales">
                         <li>Sale</li>
                     </a>
                 </ul>
@@ -116,7 +116,7 @@
                     <a class="list" href="#">
                         <li><span class="material-symbols-outlined">person</span></li>
                     </a>
-                    <a class="list" target="_self" href="#">
+                    <a class="list" target="_self" href="#" id="shop-cart">
                         <li onclick="showCartPage()"><span class="material-symbols-outlined">shopping_bag<span
                                     id="cartCount" class="badge rounded-pill badge-notification bg-danger"></span>
                             </span>
@@ -133,7 +133,7 @@
                         <p>We offer the best deals in our shop. Check them out now. We have awesome
                             stuff on sale for you.
                         </p>
-                        <button class="hero-btn">Shop Now</button>
+                        <a href="#prods"><button class="hero-btn">Shop Now</button></a>
                     </div>
                     <div class="hero-image">
                         <img src="./Assets/img/hero-image.png" alt="hero">
@@ -143,7 +143,7 @@
                 <!-- featured products  -->
 
                 <section class="container f-products">
-                    <div class="d-flex mb-3 f-product-head">
+                    <div class="d-flex mb-3 f-product-head" id="prods">
                         <h1 class="fw-bolder">Featured Products</h1>
                         <p onclick="showTopShoes(0,12)" id="viewAll" class="d-flex flex-nowrap align-items-center">View
                             all
@@ -193,7 +193,7 @@
                 </section>
 
                 <!-- chose category   -->
-                <section class="container cat-main-container">
+                <section class="container cat-main-container" id="categories">
                     <div class="cat-head">
                         <h1 id="cat-header" class="text-center fw-bolder">
                             Choose categories
@@ -213,21 +213,21 @@
                         <div id="cat-1" class="cat">
                             <h4 class="fw-bolder" style="color: #315BFF;">Sneakers <br> Collection</h4>
                             <p>120 Products</p>
-                            <a class="fw-bold" href="#" style="color: #315BFF;">See collection</a>
+                            <a class="fw-bold" href="#prods" style="color: #315BFF;">See collection</a>
                             <img src="./Assets/img/Categories/Shoes.png" alt="categories">
                             <div class="half-circle"></div>
                         </div>
                         <div id="cat-2" class="cat">
                             <h4 class="fw-bolder" style="color: #FE7831;">Football <br> Collection</h4>
                             <p>80 Products</p>
-                            <a class="fw-bold" href="#" style="color: #FE7831;">See collection</a>
+                            <a class="fw-bold" href="#prods" style="color: #FE7831;">See collection</a>
                             <img src="./Assets/img/Categories/Ball.png" alt="categories">
                             <div class="half-circle"></div>
                         </div>
                         <div id="cat-3" class="cat">
                             <h4 class="fw-bolder" style="color: #FF3C78;">Volleyball <br> Collection</h4>
                             <p>160 Products</p>
-                            <a class="fw-bold" href="#" style="color: #FF3C78;">See collection</a>
+                            <a class="fw-bold" href="#prods" style="color: #FF3C78;">See collection</a>
                             <img src="./Assets/img/Categories/Volly.png" alt="categories">
                             <div class="half-circle"></div>
                         </div>
@@ -235,7 +235,7 @@
                 </section>    
             </div>
 
-            <!-- Shopping cart -->
+            <!-- Shopping cart page-->
             <section style="display: none;" id="cart-container" class="container">
                 <div class="cart-head mb-5">
                     <h1 class="fw-bolder">Shopping Cart</h1>
